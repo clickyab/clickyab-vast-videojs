@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>vast video js :|</title>
+  <link rel="stylesheet" href="bower_components/video.js/dist/video-js.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .info {
+      background-color: #eee;
+      border: thin solid #333;
+      border-radius: 3px;
+      padding: 0 5px;
+      text-align: center;
+    }
+    .container {
+      margin: 40px auto;
+      text-align: center;
+    }
+    .container video {
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <video id="video"
+           class="video-js vjs-default-skin vjs-big-play-centered"
+           height="480"
+           width="720"
+           controls>
+      <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+    </video>
+  </div>
+
+  <script src="src/video.js"></script>
+  <script src="src/fingerprint.js"></script>
+  <!--<script src="dist/videojs-vast.js"></script>-->
+  <script src="js/vmap-client-js/vmap-client.js"></script>
+  <script src="js/vast-client-js/vast-client.js"></script>
+  <script src="js/videojs.ads.js"></script>
+  <script src="src/videojs-ad-scheduler.js"></script>
+
+  <script>
+    var options = {
+      plugins: {
+        clickyabAdScheduler: {
+          requestUrl: 'http://v.clickyab.com/ads/vast/?a=7871478719058',
+          allowSkip: true
+        }
+      }
+    };
+
+    var player = videojs('video', options).ready(function() {
+      var mplayer = this;
+      mplayer.src([{src:'http://vjs.zencdn.net/v/oceans.mp4', type:'video/mp4'}]);
+//      mplayer.play();
+    });
+  </script>
+</body>
+</html>
