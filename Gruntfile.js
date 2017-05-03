@@ -12,7 +12,7 @@ module.exports = function(grunt) {
             'src/fingerprint.js',
             'js/vmap-client-js/vmap-client.js',
             'js/vast-client-js/vast-client.js',
-            'bower_components/videojs-contrib-ads/src/videojs.ads.js',
+            'js/videojs.ads.js',
             'src/videojs-vmap-clickyab.js'
           ]
         }

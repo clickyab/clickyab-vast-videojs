@@ -37,18 +37,18 @@
   </div>
 
   <script src="src/video.js"></script>
-  <script src="src/fingerprint.js"></script>
-  <!--<script src="dist/videojs-vast.js"></script>-->
-  <script src="js/vmap-client-js/vmap-client.js"></script>
-  <script src="js/vast-client-js/vast-client.js"></script>
-  <script src="js/videojs.ads.js"></script>
-  <script src="src/videojs-ad-scheduler.js"></script>
+  <!--<script src="src/fingerprint.js"></script>-->
+  <script src="dist/videojs-vast.js"></script>
+  <!--<script src="js/vmap-client-js/vmap-client.js"></script>-->
+  <!--<script src="js/vast-client-js/vast-client.js"></script>-->
+  <!--<script src="js/videojs.ads.js"></script>-->
+  <!--<script src="src/videojs-ad-scheduler.js"></script>-->
 
   <script>
     var options = {
       plugins: {
         clickyabAdScheduler: {
-          requestUrl: 'http://v.clickyab.com/ads/vast/?a=7871478719058',
+          requestUrl: 'https://v.clickyab.com/ads/vast/?a=2781453279796&l=default&2781453279796',
           allowSkip: true
         }
       }
@@ -56,7 +56,7 @@
 
     var player = videojs('video', options).ready(function() {
       var mplayer = this;
-      mplayer.src([{src:'http://vjs.zencdn.net/v/oceans.mp4', type:'video/mp4'}]);
+      mplayer.src([{src:'https://www.tarafdari.com/sites/default/files/contents/user160399/video/real-madrid-3-0-atletico-madrid-hd.mp4', type:'video/mp4'}]);
 //      mplayer.play();
     });
   </script>
