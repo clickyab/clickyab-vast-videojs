@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>vast video js :|</title>
+  <link rel="stylesheet" href="../src/video-js.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .info {
+      background-color: #eee;
+      border: thin solid #333;
+      border-radius: 3px;
+      padding: 0 5px;
+      text-align: center;
+    }
+    .container {
+      margin: 40px auto;
+      text-align: center;
+    }
+    .container video {
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <video id="video"
+           class="video-js vjs-default-skin vjs-big-play-centered"
+           height="480"
+           width="720"
+           controls>
+      <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+    </video>
+    <video id="video2"
+           class="video-js vjs-default-skin vjs-big-play-centered"
+           height="480"
+           width="720"
+           controls>
+      <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+    </video>
+    <video id="video3"
+           class="video-js vjs-default-skin vjs-big-play-centered"
+           height="480"
+           width="720"
+           controls>
+      <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+    </video>
+  </div>
+
+  <script src="../src/video.js"></script>
+  <!--<script src="src/fingerprint.js"></script>-->
+  <script src="../dist/videojs-vast.js"></script>
+  <script src="../src/video.js"></script>
+  <!--<script src="src/fingerprint.js"></script>-->
+  <script src="../dist/videojs-vast.js"></script>
+  <!--<script src="js/vmap-client-js/vmap-client.js"></script>-->
+  <!--<script src="js/vast-client-js/vast-client.js"></script>-->
+  <!--<script src="js/videojs.ads.js"></script>-->
+  <!--<script src="src/videojs-ad-scheduler.js"></script>-->
+
+  <script>
+    var options = {
+      plugins: {
+        clickyabAdScheduler: {
+          requestUrl: 'https://v.clickyab.com/ads/vast/?a=2781453279796&l=1&2781453279796',
+          allowSkip: true
+        }
+      }
+    };
+
+    var player = videojs('video', options).ready(function() {
+      var mplayer = this;
+      mplayer.src([{src:'https://www.tarafdari.com/sites/default/files/contents/user160399/video/real-madrid-3-0-atletico-madrid-hd.mp4', type:'video/mp4'}]);
+      mplayer.play();
+    });
+
+    var player2 = videojs('video2', options).ready(function() {
+        var mplayer = this;
+        mplayer.src([{src:'https://www.tarafdari.com/sites/default/files/contents/user7028/video/bolt_4_100_emdadi_fail.mp4', type:'video/mp4'}]);
+      mplayer.play();
+    });
+
+    var player3 = videojs('video3', options).ready(function() {
+        var mplayer = this;
+        mplayer.src([{src:'https://www.tarafdari.com/sites/default/files/contents/user7410/video/d_2340.mp4', type:'video/mp4'}]);
+        mplayer.play();
+    });
+
+
+  </script>
+</body>
+</html>
