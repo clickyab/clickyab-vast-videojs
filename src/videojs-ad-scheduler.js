@@ -26,6 +26,7 @@
   clickyabAdScheduler = function(options) {
 
     var settings = videojs.mergeOptions(defaults, options);
+
     var player = this;
 
     if (player.ads === undefined) {
@@ -636,18 +637,20 @@
             media=document.createElement("SPAN");
             media.setAttribute("class","image-ad");
             media.style.display="block";
-            media.style.position="relative";
+            media.style.position="absolute";
             media.style.zIndex="1";
             media.style.background="url('"+ado.src[0].src+"')";
             media.style.backgroundSize="100% 100%";
             media.style.width="100%";
             media.style.height="100%";
+            media.style.bottom="0";
+            media.style.top="0";
             player.el().insertBefore(media, player.controlBar.el());
           } else {
             media=document.createElement("A");
             media.setAttribute("class","image-ad");
             media.style.display="block";
-            media.style.position="relative";
+            media.style.position="absolute";
             media.style.zIndex="1";
             media.style.background="url('"+ado.src[0].src+"')";
             media.style.backgroundSize="100% 100%";
@@ -655,6 +658,8 @@
             media.setAttribute("target","_blank");
             media.style.width="100%";
             media.style.height="100%";
+              media.style.bottom="0";
+              media.style.top="0";
             player.el().insertBefore(media, player.controlBar.el());
           }
           var image_ad =  document.querySelector(".image-ad");
@@ -857,7 +862,6 @@
 
         var adTimeupdate = function(e) {
           if (ado.src[0].type == "video/mp4") {
-            console.log("sedf");
             var maxDelay = settings.skipTime > player.vastTracker.skipDelay ? settings.skipTime : player.vastTracker.skipDelay;
             var timeLeft = Math.ceil(maxDelay - player.currentTime());
 
